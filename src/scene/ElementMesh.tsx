@@ -1,10 +1,10 @@
-import { Edges } from '@react-three/drei';
+import { Edges, Outlines } from '@react-three/drei';
 import type { ThreeEvent } from '@react-three/fiber';
 import { memo, useMemo } from 'react';
 import type { BuiltElement } from '../model3d/types';
 import { useSelectionStore } from '../state/selectionStore';
 import { geometryFor } from './geometry';
-import { materialFor } from './materials';
+import { edgeMode, materialFor, primitiveFor, variantFor } from './style';
 import { outline } from './palette';
 
 const noRaycast = () => null;
@@ -16,8 +16,15 @@ export const ElementMesh = memo(function ElementMesh({ el }: { el: BuiltElement 
   const clickable = el.clickable !== false;
   const selected = useSelectionStore((s) => clickable && s.selectedElementKey === key);
   const hovered = useSelectionStore((s) => clickable && s.hoveredElementKey === key);
-  const geometry = useMemo(() => geometryFor(el.primitive), [el.primitive]);
-  const material = materialFor(el.material, selected ? 'selected' : hovered ? 'hover' : 'normal');
+  const geometry = useMemo(
+    () => geometryFor(primitiveFor(el.primitive, el.material)),
+    [el.primitive, el.material],
+  );
+  const material = materialFor(
+    el.material,
+    selected ? 'selected' : hovered ? 'hover' : 'normal',
+    variantFor(el.material, key),
+  );
 
   const handlers = clickable
     ? {
@@ -52,7 +59,19 @@ export const ElementMesh = memo(function ElementMesh({ el }: { el: BuiltElement 
       userData={{ elementKey: key }}
       {...handlers}
     >
-      {!el.noOutline && !big && <Edges threshold={25} color={selected ? '#7c2d12' : outline} />}
+      {edgeMode === 'cienkie' && !el.noOutline && !big && (
+        <Edges threshold={25} color={selected ? '#7c2d12' : outline} />
+      )}
+      {edgeMode === 'gruby' &&
+        !big &&
+        el.category !== 'strefa' &&
+        el.category !== 'las' &&
+        el.category !== 'drzewo' && (
+          <Edges threshold={25} lineWidth={2.6} color={selected ? '#7c2d12' : outline} />
+        )}
+      {edgeMode === 'gruby' && (el.category === 'las' || el.category === 'drzewo') && (
+        <Outlines thickness={0.1} color={outline} />
+      )}
     </mesh>
   );
 });

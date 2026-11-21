@@ -1,4 +1,13 @@
 import { OrbitControls } from '@react-three/drei';
+import {
+  Bloom,
+  EffectComposer,
+  TiltShift2,
+  Vignette,
+  N8AO,
+  HueSaturation,
+  BrightnessContrast,
+} from '@react-three/postprocessing';
 import { Canvas } from '@react-three/fiber';
 import { useMemo } from 'react';
 import { Object3D } from 'three';
@@ -8,7 +17,56 @@ import { CameraRig } from './CameraRig';
 import { HouseView } from './HouseView';
 import { PlotView } from './PlotView';
 import { TestHooks } from './TestHooks';
+import { styleId } from './style';
 import { houseCenterWorld } from './worldMath';
+
+const look = {
+  obecny: {
+    bg: '#cfe6f3',
+    sky: '#ffffff',
+    ground: '#9aa77a',
+    hemi: 1.4,
+    sun: '#ffffff',
+    sunI: 2.2,
+    sunPos: [-40, 42, -6],
+  },
+  strategia: {
+    bg: '#bfdcef',
+    sky: '#cfe3ff',
+    ground: '#6d7a3a',
+    hemi: 1.1,
+    sun: '#ffe2b0',
+    sunI: 3.4,
+    sunPos: [-38, 30, -18],
+  },
+  lowpoly: {
+    bg: '#d9eef7',
+    sky: '#ffffff',
+    ground: '#b9c9a0',
+    hemi: 1.7,
+    sun: '#ffffff',
+    sunI: 1.9,
+    sunPos: [-30, 50, 10],
+  },
+  komiks: {
+    bg: '#bfe3f7',
+    sky: '#ffffff',
+    ground: '#9ab36a',
+    hemi: 1.5,
+    sun: '#fff6e0',
+    sunI: 2.4,
+    sunPos: [-40, 42, -6],
+  },
+  makieta: {
+    bg: '#f1ede6',
+    sky: '#ffffff',
+    ground: '#d9d2c2',
+    hemi: 1.6,
+    sun: '#fff8ee',
+    sunI: 2.2,
+    sunPos: [-35, 45, -20],
+  },
+}[styleId];
 
 /** Scena 3D: dom na działce w stylu rysunkowym. Dane przychodzą przez props (bez dostępu do bazy). */
 export default function Scene({ spec }: { spec: HouseSpec }) {
@@ -26,14 +84,18 @@ export default function Scene({ spec }: { spec: HouseSpec }) {
       }}
       data-testid="scene-canvas"
     >
-      <color attach="background" args={['#cfe6f3']} />
-      <fog attach="fog" args={['#cfe6f3', 180, 520]} />
-      <hemisphereLight args={['#ffffff', '#9aa77a', 1.4]} />
+      <color attach="background" args={[look.bg]} />
+      <fog
+        attach="fog"
+        args={[look.bg, styleId === 'makieta' ? 120 : 180, styleId === 'makieta' ? 320 : 520]}
+      />
+      <hemisphereLight args={[look.sky, look.ground, look.hemi]} />
       <primitive object={sunTarget} />
       <directionalLight
-        position={[center[0] - 40, 42, center[2] - 6]}
+        position={[center[0] + look.sunPos[0]!, look.sunPos[1]!, center[2] + look.sunPos[2]!]}
         target={sunTarget}
-        intensity={2.2}
+        color={look.sun}
+        intensity={look.sunI}
         castShadow
         shadow-mapSize={[2048, 2048]}
         shadow-camera-left={-35}
@@ -54,6 +116,21 @@ export default function Scene({ spec }: { spec: HouseSpec }) {
       />
       <CameraRig spec={spec} />
       <TestHooks />
+      {styleId === 'strategia' && (
+        <EffectComposer multisampling={4}>
+          <N8AO aoRadius={2.5} intensity={2.2} distanceFalloff={1} color="#2b3a55" />
+          <HueSaturation saturation={0.04} />
+          <BrightnessContrast contrast={0.06} />
+          <Vignette offset={0.25} darkness={0.45} />
+        </EffectComposer>
+      )}
+      {styleId === 'makieta' && (
+        <EffectComposer multisampling={4}>
+          <N8AO aoRadius={3} intensity={3} distanceFalloff={1} />
+          <TiltShift2 blur={0.22} />
+          <Bloom intensity={0.15} luminanceThreshold={0.9} />
+        </EffectComposer>
+      )}
     </Canvas>
   );
 }
