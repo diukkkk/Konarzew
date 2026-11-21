@@ -1,0 +1,36 @@
+import js from '@eslint/js';
+import globals from 'globals';
+import reactHooks from 'eslint-plugin-react-hooks';
+import tseslint from 'typescript-eslint';
+
+export default tseslint.config(
+  { ignores: ['dist', 'node_modules', 'playwright-report', 'test-results'] },
+  {
+    extends: [js.configs.recommended, ...tseslint.configs.recommended],
+    files: ['**/*.{ts,tsx}'],
+    languageOptions: { ecmaVersion: 2022, globals: globals.browser },
+    plugins: { 'react-hooks': reactHooks },
+    rules: {
+      ...reactHooks.configs.recommended.rules,
+    },
+  },
+  {
+    // Zasada architektury (02): tylko src/data może importować Dexie.
+    files: ['src/**/*.{ts,tsx}'],
+    ignores: ['src/data/**'],
+    rules: {
+      'no-restricted-imports': [
+        'error',
+        {
+          paths: [
+            {
+              name: 'dexie',
+              message: 'Dostęp do bazy tylko przez src/data (patrz docs/plan/02-architektura.md).',
+            },
+            { name: 'dexie-react-hooks', message: 'Używaj hooków z src/data/hooks.ts.' },
+          ],
+        },
+      ],
+    },
+  },
+);
