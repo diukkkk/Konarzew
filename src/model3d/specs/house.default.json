@@ -1,0 +1,1059 @@
+{
+  "schemaVersion": 1,
+  "name": "Stodoła S+ Exclusive (Lustro) — Konarzew, stan surowy zamknięty",
+  "footprint": {
+    "length": 20.28,
+    "width": 16.86
+  },
+  "wallThickness": 0.47,
+  "wallHeight": 3.55,
+  "groundLevel": -0.3,
+  "mainBlock": {
+    "depth": 9.74
+  },
+  "roof": {
+    "type": "dwuspadowy",
+    "pitchDeg": 32,
+    "overhangEaves": 0.7,
+    "overhangGable": 0.45,
+    "material": "blacha-rabek"
+  },
+  "flatParts": [
+    {
+      "key": "garaz",
+      "kind": "garaz",
+      "x": 13.02,
+      "z": 9.74,
+      "w": 7.26,
+      "d": 7.12,
+      "height": 2.98,
+      "enclosed": true
+    }
+  ],
+  "openings": [
+    {
+      "key": "o-salon-2",
+      "kind": "okno",
+      "wall": "pn",
+      "offset": 0.49,
+      "width": 2.6,
+      "height": 2.25,
+      "sill": 0.0
+    },
+    {
+      "key": "o-salon-1",
+      "kind": "okno",
+      "wall": "pn",
+      "offset": 3.69,
+      "width": 2.6,
+      "height": 2.25,
+      "sill": 0.0
+    },
+    {
+      "key": "o-gabinet",
+      "kind": "okno",
+      "wall": "pn",
+      "offset": 8.96,
+      "width": 0.85,
+      "height": 2.25,
+      "sill": 0.0
+    },
+    {
+      "key": "o-pokoj-1",
+      "kind": "okno",
+      "wall": "pn",
+      "offset": 11.8,
+      "width": 0.85,
+      "height": 2.25,
+      "sill": 0.0
+    },
+    {
+      "key": "o-pokoj-2",
+      "kind": "okno",
+      "wall": "pn",
+      "offset": 14.55,
+      "width": 0.85,
+      "height": 2.25,
+      "sill": 0.0
+    },
+    {
+      "key": "o-sypialnia-pn",
+      "kind": "okno",
+      "wall": "pn",
+      "offset": 17.91,
+      "width": 0.85,
+      "height": 2.25,
+      "sill": 0.0
+    },
+    {
+      "key": "hs-salon",
+      "kind": "drzwi",
+      "wall": "zach",
+      "offset": 0.6,
+      "width": 2.8,
+      "height": 2.25,
+      "sill": 0.0
+    },
+    {
+      "key": "o-jadalnia",
+      "kind": "okno",
+      "wall": "zach",
+      "offset": 4.6,
+      "width": 1.02,
+      "height": 2.25,
+      "sill": 0.0
+    },
+    {
+      "key": "o-kuchnia-zach",
+      "kind": "okno",
+      "wall": "zach",
+      "offset": 6.9,
+      "width": 1.2,
+      "height": 2.25,
+      "sill": 0.0
+    },
+    {
+      "key": "o-sypialnia-wsch",
+      "kind": "okno",
+      "wall": "wsch",
+      "offset": 0.6,
+      "width": 2.2,
+      "height": 1.8,
+      "sill": 0.45
+    },
+    {
+      "key": "o-07",
+      "kind": "okno",
+      "wall": "wsch",
+      "offset": 5.0,
+      "width": 0.6,
+      "height": 2.25,
+      "sill": 0.0
+    },
+    {
+      "key": "o-lazienka",
+      "kind": "okno",
+      "wall": "wsch",
+      "offset": 7.55,
+      "width": 0.7,
+      "height": 2.25,
+      "sill": 0.0
+    },
+    {
+      "key": "o-kuchnia",
+      "kind": "okno",
+      "wall": "pd",
+      "offset": 1.18,
+      "width": 3.0,
+      "height": 0.7,
+      "sill": 1.55
+    },
+    {
+      "key": "wejsciowe",
+      "kind": "drzwi",
+      "wall": "pd",
+      "offset": 7.28,
+      "width": 1.1,
+      "height": 2.2,
+      "sill": 0.0
+    },
+    {
+      "key": "o-wejscie",
+      "kind": "okno",
+      "wall": "pd",
+      "offset": 9.16,
+      "width": 1.6,
+      "height": 2.25,
+      "sill": 0.0
+    },
+    {
+      "key": "garaz",
+      "kind": "brama",
+      "wall": "garaz-pd",
+      "offset": 14.15,
+      "width": 5.0,
+      "height": 2.25,
+      "sill": 0.0
+    },
+    {
+      "key": "garaz-techniczne",
+      "kind": "drzwi",
+      "wall": "garaz-wsch",
+      "offset": 11.2,
+      "width": 0.9,
+      "height": 2.05,
+      "sill": 0.0
+    },
+    {
+      "key": "garaz-wejscie",
+      "kind": "drzwi",
+      "wall": "garaz-zach",
+      "offset": 13.5,
+      "width": 0.9,
+      "height": 2.25,
+      "sill": 0.0
+    }
+  ],
+  "gableGlazing": [
+    {
+      "key": "szczyt-salon",
+      "wall": "szczyt-zach"
+    }
+  ],
+  "terraces": [],
+  "chimneys": [
+    {
+      "key": "k1",
+      "x": 6.6,
+      "z": 3.6,
+      "w": 0.6,
+      "d": 0.5
+    }
+  ],
+  "pergolas": [
+    {
+      "key": "salon",
+      "posts": [
+        [-3.2, 0.3],
+        [-3.2, 4.8],
+        [-3.2, 9.3]
+      ],
+      "height": 2.75,
+      "postSize": 0.3
+    }
+  ],
+  "rooms": [],
+  "plot": {
+    "boundary": [
+      [0.0, 0.0],
+      [121.76, -65.27],
+      [116.58, -9.78],
+      [17.65, 32.41]
+    ],
+    "housePosition": {
+      "x": 55.97,
+      "z": -14.12,
+      "rotationDeg": 28.2
+    },
+    "mapMediaId": null,
+    "mapCalibration": null,
+    "trees": [
+      {
+        "key": "s1",
+        "x": 112.45,
+        "z": -59.09,
+        "crown": 3.7,
+        "height": 15.4,
+        "kind": "sosna"
+      },
+      {
+        "key": "s2",
+        "x": 115.22,
+        "z": -58.75,
+        "crown": 4.2,
+        "height": 14.4,
+        "kind": "sosna"
+      },
+      {
+        "key": "s3",
+        "x": 114.71,
+        "z": -55.19,
+        "crown": 4.2,
+        "height": 18.3,
+        "kind": "sosna"
+      },
+      {
+        "key": "s4",
+        "x": 99.07,
+        "z": -52.07,
+        "crown": 3.0,
+        "height": 17.5,
+        "kind": "sosna"
+      },
+      {
+        "key": "s5",
+        "x": 111.75,
+        "z": -51.75,
+        "crown": 3.2,
+        "height": 13.5,
+        "kind": "sosna"
+      },
+      {
+        "key": "s6",
+        "x": 115.71,
+        "z": -51.73,
+        "crown": 3.1,
+        "height": 17.2,
+        "kind": "sosna"
+      },
+      {
+        "key": "s7",
+        "x": 117.54,
+        "z": -52.8,
+        "crown": 4.3,
+        "height": 18.1,
+        "kind": "sosna"
+      },
+      {
+        "key": "s8",
+        "x": 98.27,
+        "z": -48.49,
+        "crown": 4.1,
+        "height": 14.5,
+        "kind": "sosna"
+      },
+      {
+        "key": "s9",
+        "x": 112.39,
+        "z": -49.61,
+        "crown": 3.3,
+        "height": 14.6,
+        "kind": "sosna"
+      },
+      {
+        "key": "s10",
+        "x": 115.16,
+        "z": -50.18,
+        "crown": 3.2,
+        "height": 14.1,
+        "kind": "sosna"
+      },
+      {
+        "key": "s11",
+        "x": 115.62,
+        "z": -45.38,
+        "crown": 3.9,
+        "height": 16.1,
+        "kind": "sosna"
+      },
+      {
+        "key": "s12",
+        "x": 87.45,
+        "z": -42.12,
+        "crown": 3.3,
+        "height": 12.2,
+        "kind": "sosna"
+      },
+      {
+        "key": "s13",
+        "x": 95.58,
+        "z": -41.85,
+        "crown": 4.2,
+        "height": 12.0,
+        "kind": "sosna"
+      },
+      {
+        "key": "s14",
+        "x": 98.4,
+        "z": -41.83,
+        "crown": 3.4,
+        "height": 12.7,
+        "kind": "sosna"
+      },
+      {
+        "key": "s15",
+        "x": 112.58,
+        "z": -42.97,
+        "crown": 4.1,
+        "height": 14.1,
+        "kind": "sosna"
+      },
+      {
+        "key": "s16",
+        "x": 114.35,
+        "z": -35.84,
+        "crown": 3.1,
+        "height": 16.6,
+        "kind": "sosna"
+      },
+      {
+        "key": "s17",
+        "x": 66.45,
+        "z": -33.83,
+        "crown": 4.3,
+        "height": 12.0,
+        "kind": "sosna"
+      },
+      {
+        "key": "s18",
+        "x": 114.24,
+        "z": -33.26,
+        "crown": 4.2,
+        "height": 12.5,
+        "kind": "sosna"
+      },
+      {
+        "key": "s19",
+        "x": 89.43,
+        "z": -30.32,
+        "crown": 4.5,
+        "height": 18.3,
+        "kind": "sosna"
+      },
+      {
+        "key": "s20",
+        "x": 98.99,
+        "z": -27.5,
+        "crown": 3.5,
+        "height": 16.5,
+        "kind": "sosna"
+      },
+      {
+        "key": "s21",
+        "x": 98.82,
+        "z": -22.8,
+        "crown": 3.4,
+        "height": 15.8,
+        "kind": "sosna"
+      },
+      {
+        "key": "s22",
+        "x": 114.72,
+        "z": -20.2,
+        "crown": 4.0,
+        "height": 12.9,
+        "kind": "sosna"
+      },
+      {
+        "key": "s23",
+        "x": 91.85,
+        "z": -17.11,
+        "crown": 3.9,
+        "height": 16.9,
+        "kind": "sosna"
+      },
+      {
+        "key": "s24",
+        "x": 93.05,
+        "z": -13.59,
+        "crown": 4.1,
+        "height": 16.9,
+        "kind": "sosna"
+      },
+      {
+        "key": "s25",
+        "x": 95.9,
+        "z": -13.31,
+        "crown": 3.6,
+        "height": 13.5,
+        "kind": "sosna"
+      },
+      {
+        "key": "s26",
+        "x": 95.19,
+        "z": -11.77,
+        "crown": 3.3,
+        "height": 13.3,
+        "kind": "sosna"
+      },
+      {
+        "key": "s27",
+        "x": 22.46,
+        "z": 2.46,
+        "crown": 3.5,
+        "height": 12.5,
+        "kind": "sosna"
+      },
+      {
+        "key": "s28",
+        "x": 40.74,
+        "z": 1.46,
+        "crown": 4.1,
+        "height": 12.7,
+        "kind": "sosna"
+      },
+      {
+        "key": "s29",
+        "x": 6.93,
+        "z": 6.03,
+        "crown": 3.1,
+        "height": 19.0,
+        "kind": "sosna"
+      },
+      {
+        "key": "s30",
+        "x": 12.31,
+        "z": 7.33,
+        "crown": 4.0,
+        "height": 15.9,
+        "kind": "sosna"
+      },
+      {
+        "key": "b1",
+        "x": 111.2,
+        "z": -59.35,
+        "crown": 4.9,
+        "height": 15.2,
+        "kind": "brzoza"
+      },
+      {
+        "key": "b2",
+        "x": 118.6,
+        "z": -61.08,
+        "crown": 5.2,
+        "height": 13.6,
+        "kind": "brzoza"
+      },
+      {
+        "key": "b3",
+        "x": 111.07,
+        "z": -56.94,
+        "crown": 3.8,
+        "height": 17.9,
+        "kind": "brzoza"
+      },
+      {
+        "key": "b4",
+        "x": 119.9,
+        "z": -56.71,
+        "crown": 4.3,
+        "height": 16.0,
+        "kind": "brzoza"
+      },
+      {
+        "key": "b5",
+        "x": 105.49,
+        "z": -50.75,
+        "crown": 4.6,
+        "height": 15.0,
+        "kind": "brzoza"
+      },
+      {
+        "key": "b6",
+        "x": 109.45,
+        "z": -52.26,
+        "crown": 5.1,
+        "height": 15.0,
+        "kind": "brzoza"
+      },
+      {
+        "key": "b7",
+        "x": 88.1,
+        "z": -46.9,
+        "crown": 4.3,
+        "height": 12.3,
+        "kind": "brzoza"
+      },
+      {
+        "key": "b8",
+        "x": 92.35,
+        "z": -47.85,
+        "crown": 4.3,
+        "height": 15.1,
+        "kind": "brzoza"
+      },
+      {
+        "key": "b9",
+        "x": 101.23,
+        "z": -46.94,
+        "crown": 4.0,
+        "height": 17.1,
+        "kind": "brzoza"
+      },
+      {
+        "key": "b10",
+        "x": 108.96,
+        "z": -47.25,
+        "crown": 3.8,
+        "height": 12.3,
+        "kind": "brzoza"
+      },
+      {
+        "key": "b11",
+        "x": 78.14,
+        "z": -41.8,
+        "crown": 4.8,
+        "height": 16.4,
+        "kind": "brzoza"
+      },
+      {
+        "key": "b12",
+        "x": 81.5,
+        "z": -42.61,
+        "crown": 5.1,
+        "height": 13.2,
+        "kind": "brzoza"
+      },
+      {
+        "key": "b13",
+        "x": 92.54,
+        "z": -43.23,
+        "crown": 5.2,
+        "height": 16.9,
+        "kind": "brzoza"
+      },
+      {
+        "key": "b14",
+        "x": 104.37,
+        "z": -41.26,
+        "crown": 4.3,
+        "height": 16.1,
+        "kind": "brzoza"
+      },
+      {
+        "key": "b15",
+        "x": 109.14,
+        "z": -42.33,
+        "crown": 4.3,
+        "height": 13.4,
+        "kind": "brzoza"
+      },
+      {
+        "key": "b16",
+        "x": 115.9,
+        "z": -41.59,
+        "crown": 5.1,
+        "height": 15.3,
+        "kind": "brzoza"
+      },
+      {
+        "key": "b17",
+        "x": 81.39,
+        "z": -37.99,
+        "crown": 4.5,
+        "height": 13.4,
+        "kind": "brzoza"
+      },
+      {
+        "key": "b18",
+        "x": 88.04,
+        "z": -36.3,
+        "crown": 3.9,
+        "height": 17.7,
+        "kind": "brzoza"
+      },
+      {
+        "key": "b19",
+        "x": 91.53,
+        "z": -37.68,
+        "crown": 3.8,
+        "height": 12.3,
+        "kind": "brzoza"
+      },
+      {
+        "key": "b20",
+        "x": 96.62,
+        "z": -38.65,
+        "crown": 4.7,
+        "height": 17.9,
+        "kind": "brzoza"
+      },
+      {
+        "key": "b21",
+        "x": 100.52,
+        "z": -37.95,
+        "crown": 4.9,
+        "height": 17.3,
+        "kind": "brzoza"
+      },
+      {
+        "key": "b22",
+        "x": 105.79,
+        "z": -38.44,
+        "crown": 4.0,
+        "height": 13.0,
+        "kind": "brzoza"
+      },
+      {
+        "key": "b23",
+        "x": 111.25,
+        "z": -36.93,
+        "crown": 3.6,
+        "height": 15.1,
+        "kind": "brzoza"
+      },
+      {
+        "key": "b24",
+        "x": 68.03,
+        "z": -34.41,
+        "crown": 5.3,
+        "height": 13.8,
+        "kind": "brzoza"
+      },
+      {
+        "key": "b25",
+        "x": 82.48,
+        "z": -33.25,
+        "crown": 4.5,
+        "height": 12.1,
+        "kind": "brzoza"
+      },
+      {
+        "key": "b26",
+        "x": 88.47,
+        "z": -32.85,
+        "crown": 5.0,
+        "height": 12.0,
+        "kind": "brzoza"
+      },
+      {
+        "key": "b27",
+        "x": 93.43,
+        "z": -34.13,
+        "crown": 4.4,
+        "height": 14.9,
+        "kind": "brzoza"
+      },
+      {
+        "key": "b28",
+        "x": 96.98,
+        "z": -31.84,
+        "crown": 5.3,
+        "height": 16.0,
+        "kind": "brzoza"
+      },
+      {
+        "key": "b29",
+        "x": 99.85,
+        "z": -31.73,
+        "crown": 4.7,
+        "height": 14.4,
+        "kind": "brzoza"
+      },
+      {
+        "key": "b30",
+        "x": 105.87,
+        "z": -33.39,
+        "crown": 5.5,
+        "height": 12.9,
+        "kind": "brzoza"
+      },
+      {
+        "key": "b31",
+        "x": 108.87,
+        "z": -31.86,
+        "crown": 4.8,
+        "height": 17.6,
+        "kind": "brzoza"
+      },
+      {
+        "key": "b32",
+        "x": 118.06,
+        "z": -33.4,
+        "crown": 4.0,
+        "height": 12.4,
+        "kind": "brzoza"
+      },
+      {
+        "key": "b33",
+        "x": 87.36,
+        "z": -28.48,
+        "crown": 4.4,
+        "height": 17.2,
+        "kind": "brzoza"
+      },
+      {
+        "key": "b34",
+        "x": 91.1,
+        "z": -27.64,
+        "crown": 5.0,
+        "height": 15.9,
+        "kind": "brzoza"
+      },
+      {
+        "key": "b35",
+        "x": 95.5,
+        "z": -27.79,
+        "crown": 4.5,
+        "height": 14.9,
+        "kind": "brzoza"
+      },
+      {
+        "key": "b36",
+        "x": 101.87,
+        "z": -27.9,
+        "crown": 5.1,
+        "height": 15.9,
+        "kind": "brzoza"
+      },
+      {
+        "key": "b37",
+        "x": 109.87,
+        "z": -27.34,
+        "crown": 4.1,
+        "height": 12.2,
+        "kind": "brzoza"
+      },
+      {
+        "key": "b38",
+        "x": 113.67,
+        "z": -28.39,
+        "crown": 5.3,
+        "height": 12.8,
+        "kind": "brzoza"
+      },
+      {
+        "key": "b39",
+        "x": 92.87,
+        "z": -22.54,
+        "crown": 4.8,
+        "height": 17.7,
+        "kind": "brzoza"
+      },
+      {
+        "key": "b40",
+        "x": 95.46,
+        "z": -23.5,
+        "crown": 5.0,
+        "height": 13.2,
+        "kind": "brzoza"
+      },
+      {
+        "key": "b41",
+        "x": 100.37,
+        "z": -23.67,
+        "crown": 4.5,
+        "height": 13.6,
+        "kind": "brzoza"
+      },
+      {
+        "key": "b42",
+        "x": 104.33,
+        "z": -24.11,
+        "crown": 4.9,
+        "height": 17.9,
+        "kind": "brzoza"
+      },
+      {
+        "key": "b43",
+        "x": 109.19,
+        "z": -24.65,
+        "crown": 4.3,
+        "height": 15.5,
+        "kind": "brzoza"
+      },
+      {
+        "key": "b44",
+        "x": 115.1,
+        "z": -23.68,
+        "crown": 3.6,
+        "height": 13.4,
+        "kind": "brzoza"
+      },
+      {
+        "key": "b45",
+        "x": 36.99,
+        "z": -17.84,
+        "crown": 5.3,
+        "height": 17.9,
+        "kind": "brzoza"
+      },
+      {
+        "key": "b46",
+        "x": 40.44,
+        "z": -19.59,
+        "crown": 4.3,
+        "height": 15.5,
+        "kind": "brzoza"
+      },
+      {
+        "key": "b47",
+        "x": 91.78,
+        "z": -19.65,
+        "crown": 3.9,
+        "height": 13.6,
+        "kind": "brzoza"
+      },
+      {
+        "key": "b48",
+        "x": 97.86,
+        "z": -18.77,
+        "crown": 5.5,
+        "height": 14.2,
+        "kind": "brzoza"
+      },
+      {
+        "key": "b49",
+        "x": 106.9,
+        "z": -18.32,
+        "crown": 4.4,
+        "height": 15.1,
+        "kind": "brzoza"
+      },
+      {
+        "key": "b50",
+        "x": 109.74,
+        "z": -20.69,
+        "crown": 4.1,
+        "height": 15.9,
+        "kind": "brzoza"
+      },
+      {
+        "key": "b51",
+        "x": 32.18,
+        "z": -13.42,
+        "crown": 4.5,
+        "height": 16.2,
+        "kind": "brzoza"
+      },
+      {
+        "key": "b52",
+        "x": 19.19,
+        "z": -8.94,
+        "crown": 4.2,
+        "height": 12.4,
+        "kind": "brzoza"
+      },
+      {
+        "key": "b53",
+        "x": 28.68,
+        "z": -10.73,
+        "crown": 4.9,
+        "height": 15.6,
+        "kind": "brzoza"
+      },
+      {
+        "key": "b54",
+        "x": 32.01,
+        "z": -10.42,
+        "crown": 5.1,
+        "height": 14.0,
+        "kind": "brzoza"
+      },
+      {
+        "key": "b55",
+        "x": 18.79,
+        "z": -5.54,
+        "crown": 3.8,
+        "height": 12.9,
+        "kind": "brzoza"
+      },
+      {
+        "key": "b56",
+        "x": 10.61,
+        "z": 0.39,
+        "crown": 4.1,
+        "height": 14.4,
+        "kind": "brzoza"
+      },
+      {
+        "key": "b57",
+        "x": 22.88,
+        "z": -0.79,
+        "crown": 3.6,
+        "height": 17.4,
+        "kind": "brzoza"
+      },
+      {
+        "key": "b58",
+        "x": 3.1,
+        "z": 2.54,
+        "crown": 5.1,
+        "height": 12.3,
+        "kind": "brzoza"
+      },
+      {
+        "key": "b59",
+        "x": 10.65,
+        "z": 5.0,
+        "crown": 5.4,
+        "height": 14.2,
+        "kind": "brzoza"
+      },
+      {
+        "key": "b60",
+        "x": 21.44,
+        "z": 4.98,
+        "crown": 3.8,
+        "height": 16.7,
+        "kind": "brzoza"
+      },
+      {
+        "key": "b61",
+        "x": 27.39,
+        "z": 4.39,
+        "crown": 3.8,
+        "height": 16.0,
+        "kind": "brzoza"
+      },
+      {
+        "key": "b62",
+        "x": 41.44,
+        "z": 4.72,
+        "crown": 4.5,
+        "height": 15.9,
+        "kind": "brzoza"
+      },
+      {
+        "key": "b63",
+        "x": 4.86,
+        "z": 7.34,
+        "crown": 5.1,
+        "height": 15.8,
+        "kind": "brzoza"
+      }
+    ],
+    "zones": [
+      {
+        "key": "podjazd",
+        "name": "Podjazd z kostki",
+        "kind": "podjazd",
+        "polygon": [
+          [18.7, 30.53],
+          [19.08, 25.06],
+          [72.52, -4.2],
+          [75.7, 3.44]
+        ]
+      },
+      {
+        "key": "oczyszczalnia",
+        "name": "Oczyszczalnia / drenaż",
+        "kind": "oczyszczalnia",
+        "polygon": [
+          [76.97, 0.89],
+          [98.6, -7.38],
+          [99.87, -4.83],
+          [78.24, 3.82]
+        ]
+      }
+    ],
+    "surroundingForest": {
+      "depth": 35,
+      "density": 0.02,
+      "seed": 605,
+      "skipEdges": [2, 3]
+    }
+  },
+  "extras": {
+    "sources": {
+      "footprint": "rzut parteru 20,28 × 16,86 [Z]; mapa 9,74 + 7,12",
+      "heights": "elewacje: kalenica +6,89 (z pokryciem), +6,58 konstr., okap +3,21, attyka +2,98, nadproża +2,25 [Z]",
+      "openings": "rzut-parteru-zmiany-stolarki.pdf (zmiany Damiana); pozycje wzdłuż ścian z łańcuchów wymiarowych [S ±0,3 m]",
+      "plot": "granice i drzewa: ortofotomapa Geoportal (materialy/dzialka/ortofoto-geoportal-605-8.png, 0.0979 m/px, narożnik A = px (100,688), C = px (1340,15)), skala z mapy 03 (posadowienie 56 m / 14 m)",
+      "trees": "automatycznie z ortofotomapy: ciemne korony = sosny (siatka 3,2 m), szare korony = brzozy/liściaste (siatka 4,6 m); pominięte 12 m wokół domu, podjazd i pas 9 m wzdłuż granicy południowej (podjazd, przyłącza) (ortofoto sprzed budowy)",
+      "gableGlazing": "Damian 2026-11-21: przeszklenie w szczycie salonu to trójkąt prostokątny na połowie szczytu (od strony ogrodu); elewacja boczna, wizja 3",
+      "flatParts": "Damian 2026-11-21: dach płaski tylko nad garażem, brak zadaszenia nad podjazdem/wejściem",
+      "photos": "zdjęcia stanu surowego 2026-11 (materialy/zdjecia/stan-surowy): 4 wąskie okna do podłogi od ogrodu (05, 21, 12, 24, 26, 28) ~0,85 m; szeroki okap z odkrytymi krokwiami ~0,7 m (08, 13, 14, 17, 22, 23); wieniec jako ciemny pas, mur między krokwiami (13, 14); dach płaski z papy tylko nad garażem, okap dachu stromego nad nim (03, 16); betonowa rama pergoli przy szczycie salonu (21, 18); przeszklenie trójkątne na połowie szczytu od ogrodu (21, 29, 02)"
+    },
+    "assumptions": [
+      "ZAŁOŻENIE: wysokość ścian 3,55 m (mur między krokwiami), kąt dachu 32° — tak, by kalenica wypadła ok. +6,6/+6,9, a okap ok. +3,2 (elewacje)",
+      "ZAŁOŻENIE: wysięg okapu 0,7 m na ścianach podłużnych i 0,45 m na szczytach (zdjęcia 08, 13, 22)",
+      "ZAŁOŻENIE: wąskie okna od ogrodu 0,85 m szerokości (proporcje na zdjęciach 21, 26; rzut podaje 120)",
+      "ZAŁOŻENIE: komin ok. 6,6 m od szczytu salonu, po stronie ogrodowej kalenicy",
+      "ZAŁOŻENIE: tarasy i rama pergoli przy szczycie salonu wg zdjęcia 21 i mapy (wymiary szacunkowe)",
+      "ZAŁOŻENIE: okno 07 zostaje; okno sypialni od szczytu 220 × 180; brama garażowa 500 × 225",
+      "ZAŁOŻENIE: granice działki odczytane z podglądu mapy — pole wychodzi ok. 5300 m² zamiast ok. 4800 m²; do kalibracji w T11"
+    ],
+    "visionOnly": {
+      "terraces": [
+        {
+          "key": "t1",
+          "x": 0,
+          "z": -3.5,
+          "w": 9.0,
+          "d": 3.5,
+          "covered": false
+        },
+        {
+          "key": "t2",
+          "x": -3.5,
+          "z": -3.5,
+          "w": 3.5,
+          "d": 13.24,
+          "covered": true
+        }
+      ],
+      "note": "Tarasy z desek są w wizji (rendery), na zdjęciach 21/05 jeszcze ich nie ma — dodać w wersji „wizja” (T13)."
+    }
+  }
+}

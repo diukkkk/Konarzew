@@ -1,32 +1,29 @@
 # 02 — Architektura i technologie
 
 ## Wersja dla Damiana (bez żargonu)
-
 Aplikacja to strona internetowa, którą otwierasz w przeglądarce. Na początku wszystko zapisuje się w pamięci przeglądarki na Twoim komputerze (bez logowania). Model domu nie jest rysowany ręcznie w programie 3D — jest **budowany automatycznie z liczb** (długość, szerokość, kąt dachu, położenie okien) zapisanych w jednym pliku. Dzięki temu poprawka w rzucie to zmiana liczby, a nie przerysowanie modelu. Później dołożymy konta i chmurę, żeby żona widziała to samo na telefonie — dane od początku są tak zaprojektowane, żeby to było proste.
 
 ## Stos technologiczny (z uzasadnieniem)
-
-| Obszar          | Wybór                                                          | Dlaczego                                                                                            |
-| --------------- | -------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
-| Język           | TypeScript                                                     | Typy łapią błędy agentów; kontrakty między modułami są sprawdzane automatycznie                     |
-| Budowanie       | Vite                                                           | Standard, szybki, prosta konfiguracja                                                               |
-| UI              | React 19                                                       | Najwięcej przykładów i bibliotek, agenci znają go najlepiej                                         |
-| 3D              | three.js + @react-three/fiber + @react-three/drei              | Najpopularniejszy silnik 3D w przeglądarce; drei daje gotowe: kamera orbitalna, obrysy, klikanie    |
-| Styl 3D         | `MeshToonMaterial` + `Outlines`/`Edges` z drei, płaskie kolory | Rysunkowy wygląd bez tekstur                                                                        |
-| Stan aplikacji  | Zustand                                                        | Prosty, mało kodu, łatwy dla agentów                                                                |
-| Baza lokalna    | IndexedDB przez Dexie.js (+ `dexie-react-hooks`)               | Przechowuje dane i zdjęcia (Blob) w przeglądarce; wersjonowane migracje                             |
-| Zdjęcia         | `browser-image-compression` (miniatury + kompresja)            | Zdjęcia z telefonu są duże; trzymamy oryginał zmniejszony do ~2560 px + miniaturę 400 px            |
-| Style UI        | Tailwind CSS + prosty zestaw własnych komponentów              | Szybkie, spójne, responsywne (telefon/tablet)                                                       |
-| Routing         | React Router                                                   | Widoki: Model, Tablica (mood board), Zadania, Zakupy, Oś czasu, Ustawienia                          |
-| Testy           | Vitest (logika), Playwright (scenariusze w przeglądarce)       | Kryteria akceptacji w kartach zadań mają być sprawdzalne                                            |
-| Hosting         | Statyczny: GitHub Pages lub Netlify (Z-3)                      | Darmowy, bez serwera w fazach 1–3                                                                   |
-| Chmura (faza 4) | Supabase (Postgres + logowanie + przechowywanie plików)        | Darmowy plan wystarcza dla 2 osób; model danych od początku zgodny (UUID, `updatedAt`, `deletedAt`) |
-| PWA             | `vite-plugin-pwa`                                              | Ikona na telefonie, pełny ekran                                                                     |
+| Obszar | Wybór | Dlaczego |
+|---|---|---|
+| Język | TypeScript | Typy łapią błędy agentów; kontrakty między modułami są sprawdzane automatycznie |
+| Budowanie | Vite | Standard, szybki, prosta konfiguracja |
+| UI | React 19 | Najwięcej przykładów i bibliotek, agenci znają go najlepiej |
+| 3D | three.js + @react-three/fiber + @react-three/drei | Najpopularniejszy silnik 3D w przeglądarce; drei daje gotowe: kamera orbitalna, obrysy, klikanie |
+| Styl 3D | `MeshToonMaterial` + `Outlines`/`Edges` z drei, płaskie kolory | Rysunkowy wygląd bez tekstur |
+| Stan aplikacji | Zustand | Prosty, mało kodu, łatwy dla agentów |
+| Baza lokalna | IndexedDB przez Dexie.js (+ `dexie-react-hooks`) | Przechowuje dane i zdjęcia (Blob) w przeglądarce; wersjonowane migracje |
+| Zdjęcia | `browser-image-compression` (miniatury + kompresja) | Zdjęcia z telefonu są duże; trzymamy oryginał zmniejszony do ~2560 px + miniaturę 400 px |
+| Style UI | Tailwind CSS + prosty zestaw własnych komponentów | Szybkie, spójne, responsywne (telefon/tablet) |
+| Routing | React Router | Widoki: Model, Tablica (mood board), Zadania, Zakupy, Oś czasu, Ustawienia |
+| Testy | Vitest (logika), Playwright (scenariusze w przeglądarce) | Kryteria akceptacji w kartach zadań mają być sprawdzalne |
+| Hosting | Statyczny: GitHub Pages lub Netlify (Z-3) | Darmowy, bez serwera w fazach 1–3 |
+| Chmura (faza 4) | Supabase (Postgres + logowanie + przechowywanie plików) | Darmowy plan wystarcza dla 2 osób; model danych od początku zgodny (UUID, `updatedAt`, `deletedAt`) |
+| PWA | `vite-plugin-pwa` | Ikona na telefonie, pełny ekran |
 
 Wersje bibliotek ustala T01 i zapisuje w `DECYZJE.md`. Nie dodawaj nowych bibliotek bez wpisu w `DECYZJE.md`.
 
 ## Zasady architektoniczne
-
 1. **Model 3D jest generowany z danych** (`HouseSpec` JSON), nie z pliku .glb. Generator nadaje każdej siatce stały `elementKey`.
 2. **Pinezki przypinają się do `elementKey`, nie do siatki 3D.** Zmiana geometrii nie gubi pinezek. Zmiana/usunięcie klucza = migracja (patrz 04).
 3. **Warstwa danych jest jedynym miejscem dostępu do bazy.** UI i 3D nie importują Dexie bezpośrednio — tylko funkcje z `src/data/`.
@@ -36,7 +33,6 @@ Wersje bibliotek ustala T01 i zapisuje w `DECYZJE.md`. Nie dodawaj nowych biblio
 7. Interfejs w całości po polsku; teksty w `src/i18n/pl.ts` (łatwiej poprawiać).
 
 ## Struktura folderów (docelowa)
-
 ```
 src/
   core/                 # KONTRAKTY — zmiany tylko z wpisem w DECYZJE.md
@@ -72,9 +68,7 @@ tests/e2e/              # Playwright
 ```
 
 ## Publiczne API modułów (kontrakty — skrót; pełne typy w 03)
-
 **`src/data/repos/*`** — każda funkcja asynchroniczna, zwraca typy z `core/types.ts`:
-
 - `pins`: `createPin(input)`, `updatePin(id, patch)`, `deletePin(id)`, `listPinsByElement(elementKey)`, `listAllPins()`
 - `entries`: `createEntry(input)`, `updateEntry(id, patch)`, `deleteEntry(id)`, `listEntriesByPin(pinId)`, `queryEntries({type?, elementKeyPrefix?, status?, text?})`
 - `shopping`: `addShoppingItem(input)`, `toggleBought(id)`, `updateShoppingItem(id, patch)`, `deleteShoppingItem(id)`, `listShopping({bought?})`
@@ -90,5 +84,4 @@ tests/e2e/              # Playwright
 **`src/state/viewStore`**: `{ activeVersionId, visibleLayers: Layer[], interiorMode: 'zewnatrz'|'bez-dachu'|'pietro-0'|'pietro-1', toggleLayer() }`.
 
 ## Przepływ kliknięcia (przykład)
-
 Kliknięcie dachu → `scene` odczytuje `userData.elementKey` siatki → `selectionStore.select('dom.dach.polac-pd', punkt)` → `features/pins` pokazuje panel → `usePins(key)` → użytkownik dodaje wpis → `entries.createEntry()` → Dexie → hooki odświeżają panel i znaczniki pinezek w 3D.
