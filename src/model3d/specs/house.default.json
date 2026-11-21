@@ -1,0 +1,453 @@
+{
+  "schemaVersion": 1,
+  "name": "Stodoła S+ Exclusive (Lustro) — Konarzew, stan surowy zamknięty",
+  "footprint": {
+    "length": 20.28,
+    "width": 16.86
+  },
+  "wallThickness": 0.47,
+  "wallHeight": 3.0,
+  "groundLevel": -0.3,
+  "mainBlock": {
+    "depth": 9.74
+  },
+  "roof": {
+    "type": "dwuspadowy",
+    "pitchDeg": 36,
+    "overhangEaves": 0.4,
+    "overhangGable": 0.15,
+    "material": "blacha-rabek"
+  },
+  "flatParts": [
+    {
+      "key": "garaz",
+      "kind": "garaz",
+      "x": 13.02,
+      "z": 9.74,
+      "w": 7.26,
+      "d": 7.12,
+      "height": 2.98,
+      "enclosed": true
+    },
+    {
+      "key": "wejscie",
+      "kind": "zadaszenie",
+      "x": 0,
+      "z": 9.74,
+      "w": 13.02,
+      "d": 7.12,
+      "height": 2.98,
+      "enclosed": false
+    }
+  ],
+  "openings": [
+    {
+      "key": "o-salon-2",
+      "kind": "okno",
+      "wall": "pn",
+      "offset": 0.49,
+      "width": 2.6,
+      "height": 2.25,
+      "sill": 0.0
+    },
+    {
+      "key": "o-salon-1",
+      "kind": "okno",
+      "wall": "pn",
+      "offset": 3.69,
+      "width": 2.6,
+      "height": 2.25,
+      "sill": 0.0
+    },
+    {
+      "key": "o-gabinet",
+      "kind": "okno",
+      "wall": "pn",
+      "offset": 8.79,
+      "width": 1.2,
+      "height": 2.25,
+      "sill": 0.0
+    },
+    {
+      "key": "o-pokoj-1",
+      "kind": "okno",
+      "wall": "pn",
+      "offset": 11.63,
+      "width": 1.2,
+      "height": 2.25,
+      "sill": 0.0
+    },
+    {
+      "key": "o-pokoj-2",
+      "kind": "okno",
+      "wall": "pn",
+      "offset": 14.38,
+      "width": 1.2,
+      "height": 2.25,
+      "sill": 0.0
+    },
+    {
+      "key": "o-sypialnia-pn",
+      "kind": "okno",
+      "wall": "pn",
+      "offset": 17.73,
+      "width": 1.2,
+      "height": 1.8,
+      "sill": 0.45
+    },
+    {
+      "key": "hs-salon",
+      "kind": "drzwi",
+      "wall": "zach",
+      "offset": 0.6,
+      "width": 2.8,
+      "height": 2.25,
+      "sill": 0.0
+    },
+    {
+      "key": "o-jadalnia",
+      "kind": "okno",
+      "wall": "zach",
+      "offset": 4.6,
+      "width": 1.02,
+      "height": 2.25,
+      "sill": 0.0
+    },
+    {
+      "key": "o-kuchnia-zach",
+      "kind": "okno",
+      "wall": "zach",
+      "offset": 6.9,
+      "width": 1.2,
+      "height": 2.25,
+      "sill": 0.0
+    },
+    {
+      "key": "o-sypialnia-wsch",
+      "kind": "okno",
+      "wall": "wsch",
+      "offset": 0.6,
+      "width": 2.2,
+      "height": 1.8,
+      "sill": 0.45
+    },
+    {
+      "key": "o-07",
+      "kind": "okno",
+      "wall": "wsch",
+      "offset": 5.0,
+      "width": 0.6,
+      "height": 2.25,
+      "sill": 0.0
+    },
+    {
+      "key": "o-lazienka",
+      "kind": "okno",
+      "wall": "wsch",
+      "offset": 7.55,
+      "width": 0.7,
+      "height": 2.25,
+      "sill": 0.0
+    },
+    {
+      "key": "o-kuchnia",
+      "kind": "okno",
+      "wall": "pd",
+      "offset": 1.18,
+      "width": 3.0,
+      "height": 0.7,
+      "sill": 1.55
+    },
+    {
+      "key": "wejsciowe",
+      "kind": "drzwi",
+      "wall": "pd",
+      "offset": 7.28,
+      "width": 1.1,
+      "height": 2.2,
+      "sill": 0.0
+    },
+    {
+      "key": "o-wejscie",
+      "kind": "okno",
+      "wall": "pd",
+      "offset": 9.16,
+      "width": 1.6,
+      "height": 2.25,
+      "sill": 0.0
+    },
+    {
+      "key": "garaz",
+      "kind": "brama",
+      "wall": "garaz-pd",
+      "offset": 14.15,
+      "width": 5.0,
+      "height": 2.25,
+      "sill": 0.0
+    },
+    {
+      "key": "garaz-techniczne",
+      "kind": "drzwi",
+      "wall": "garaz-wsch",
+      "offset": 11.2,
+      "width": 0.9,
+      "height": 2.05,
+      "sill": 0.0
+    }
+  ],
+  "gableGlazing": [
+    {
+      "key": "szczyt-salon",
+      "wall": "szczyt-zach"
+    }
+  ],
+  "terraces": [
+    {
+      "key": "t1",
+      "x": 0,
+      "z": -3.5,
+      "w": 9.0,
+      "d": 3.5,
+      "covered": false
+    },
+    {
+      "key": "t2",
+      "x": -3.5,
+      "z": -3.5,
+      "w": 3.5,
+      "d": 13.24,
+      "covered": true
+    }
+  ],
+  "chimneys": [
+    {
+      "key": "k1",
+      "x": 6.6,
+      "z": 3.6,
+      "w": 0.6,
+      "d": 0.5
+    }
+  ],
+  "pergolas": [
+    {
+      "key": "salon",
+      "posts": [
+        [-3.2, 0.3],
+        [-3.2, 4.8],
+        [-3.2, 9.3]
+      ],
+      "height": 2.75,
+      "postSize": 0.3
+    }
+  ],
+  "rooms": [],
+  "plot": {
+    "boundary": [
+      [0.0, 0.0],
+      [121.76, -65.27],
+      [117.05, -8.02],
+      [17.56, 32.7]
+    ],
+    "housePosition": {
+      "x": 55.97,
+      "z": -14.12,
+      "rotationDeg": 28.2
+    },
+    "mapMediaId": null,
+    "mapCalibration": null,
+    "trees": [
+      {
+        "key": "d1",
+        "x": 29.01,
+        "z": -30.28,
+        "crown": 4.0,
+        "height": 14.0,
+        "kind": "brzoza"
+      },
+      {
+        "key": "d2",
+        "x": 31.42,
+        "z": -27.48,
+        "crown": 3.5,
+        "height": 18.0,
+        "kind": "sosna"
+      },
+      {
+        "key": "d3",
+        "x": 34.35,
+        "z": -29.52,
+        "crown": 4.0,
+        "height": 14.0,
+        "kind": "brzoza"
+      },
+      {
+        "key": "d4",
+        "x": 40.08,
+        "z": -23.66,
+        "crown": 3.5,
+        "height": 18.0,
+        "kind": "sosna"
+      },
+      {
+        "key": "d5",
+        "x": 50.25,
+        "z": -23.54,
+        "crown": 4.0,
+        "height": 14.0,
+        "kind": "brzoza"
+      },
+      {
+        "key": "d6",
+        "x": 5.73,
+        "z": -13.99,
+        "crown": 3.5,
+        "height": 18.0,
+        "kind": "sosna"
+      },
+      {
+        "key": "d7",
+        "x": 10.81,
+        "z": -14.12,
+        "crown": 4.0,
+        "height": 14.0,
+        "kind": "brzoza"
+      },
+      {
+        "key": "d8",
+        "x": 8.4,
+        "z": -10.69,
+        "crown": 3.5,
+        "height": 18.0,
+        "kind": "sosna"
+      },
+      {
+        "key": "d9",
+        "x": 39.82,
+        "z": -12.98,
+        "crown": 4.0,
+        "height": 14.0,
+        "kind": "brzoza"
+      },
+      {
+        "key": "d10",
+        "x": 44.78,
+        "z": -12.98,
+        "crown": 3.5,
+        "height": 18.0,
+        "kind": "sosna"
+      },
+      {
+        "key": "d11",
+        "x": 42.75,
+        "z": -10.31,
+        "crown": 4.0,
+        "height": 14.0,
+        "kind": "brzoza"
+      },
+      {
+        "key": "d12",
+        "x": 40.97,
+        "z": -6.23,
+        "crown": 3.5,
+        "height": 18.0,
+        "kind": "sosna"
+      },
+      {
+        "key": "d13",
+        "x": 13.74,
+        "z": 1.02,
+        "crown": 4.0,
+        "height": 14.0,
+        "kind": "brzoza"
+      },
+      {
+        "key": "d14",
+        "x": 18.7,
+        "z": 1.02,
+        "crown": 3.5,
+        "height": 18.0,
+        "kind": "sosna"
+      },
+      {
+        "key": "d15",
+        "x": 14.12,
+        "z": 11.7,
+        "crown": 4.0,
+        "height": 14.0,
+        "kind": "brzoza"
+      },
+      {
+        "key": "d16",
+        "x": 22.65,
+        "z": 19.59,
+        "crown": 3.5,
+        "height": 18.0,
+        "kind": "sosna"
+      },
+      {
+        "key": "d17",
+        "x": 27.86,
+        "z": 19.72,
+        "crown": 4.0,
+        "height": 14.0,
+        "kind": "brzoza"
+      },
+      {
+        "key": "d18",
+        "x": 25.06,
+        "z": 22.52,
+        "crown": 3.5,
+        "height": 18.0,
+        "kind": "sosna"
+      }
+    ],
+    "zones": [
+      {
+        "key": "podjazd",
+        "name": "Podjazd z kostki",
+        "kind": "podjazd",
+        "polygon": [
+          [18.7, 30.53],
+          [19.08, 25.06],
+          [72.52, -4.2],
+          [75.7, 3.44]
+        ]
+      },
+      {
+        "key": "oczyszczalnia",
+        "name": "Oczyszczalnia / drenaż",
+        "kind": "oczyszczalnia",
+        "polygon": [
+          [76.97, 0.89],
+          [98.6, -7.38],
+          [99.87, -4.83],
+          [78.24, 3.82]
+        ]
+      }
+    ],
+    "surroundingForest": {
+      "depth": 30,
+      "density": 0.012,
+      "seed": 605,
+      "skipEdges": [3]
+    }
+  },
+  "extras": {
+    "sources": {
+      "footprint": "rzut parteru 20,28 × 16,86 [Z]; mapa 9,74 + 7,12",
+      "heights": "elewacje: kalenica +6,89 (z pokryciem), +6,58 konstr., okap +3,21, attyka +2,98, nadproża +2,25 [Z]",
+      "openings": "rzut-parteru-zmiany-stolarki.pdf (zmiany Damiana); pozycje wzdłuż ścian z łańcuchów wymiarowych [S ±0,3 m]",
+      "plot": "mapa 03 1:500 — narożniki odczytane z rysunku [S]; posadowienie: 56 m od zach. granicy, 14 m od pn. granicy [Z]",
+      "trees": "kółka z mapy 03 [Z położenie, S wielkość]"
+    },
+    "assumptions": [
+      "ZAŁOŻENIE: kąt dachu 36° (wyliczony z wysokości kalenicy 6,58 i szerokości 9,74; brak przekroju)",
+      "ZAŁOŻENIE: część frontowa obok garażu (13 × 7 m) to otwarte zadaszenie wejścia z płaskim dachem na +2,98 — do potwierdzenia",
+      "ZAŁOŻENIE: wysięg okapu 0,4 m na ścianach podłużnych, 0,15 m na szczytach",
+      "ZAŁOŻENIE: komin ok. 6,6 m od szczytu salonu, po stronie ogrodowej kalenicy",
+      "ZAŁOŻENIE: tarasy i rama pergoli przy szczycie salonu wg zdjęcia 21 i mapy (wymiary szacunkowe)",
+      "ZAŁOŻENIE: okno 07 zostaje; okno sypialni od szczytu 220 × 180; brama garażowa 500 × 225",
+      "ZAŁOŻENIE: granice działki odczytane z podglądu mapy — pole wychodzi ok. 5300 m² zamiast ok. 4800 m²; do kalibracji w T11"
+    ]
+  }
+}

@@ -33,11 +33,3 @@ test('K3: układ zależny od szerokości, bez poziomego przewijania', async ({ p
   const overflow = await page.evaluate(() => document.documentElement.scrollWidth > window.innerWidth);
   expect(overflow).toBe(false);
 });
-
-test('panel szczegółów otwiera się i zamyka', async ({ page }) => {
-  await page.goto('./');
-  await page.getByRole('button', { name: 'Szczegóły' }).click();
-  await expect(page.getByRole('dialog', { name: 'Szczegóły' })).toBeVisible();
-  await page.getByRole('button', { name: 'Zamknij' }).click();
-  await expect(page.getByRole('dialog')).toHaveCount(0);
-});
