@@ -4,10 +4,21 @@ import { memo, useMemo } from 'react';
 import type { BuiltElement } from '../model3d/types';
 import { useSelectionStore } from '../state/selectionStore';
 import { geometryFor } from './geometry';
-import { edgeMode, materialFor, primitiveFor, variantFor } from './style';
+import { edgeMode, materialFor, primitiveFor, styleId, variantFor } from './style';
 import { outline } from './palette';
 
 const noRaycast = () => null;
+// „realizm”: korona brzozy z kilku kulek, sosna z warstw — bardziej naturalna sylwetka
+const BIRCH_BLOBS: [number, number, number, number][] = [
+  [0.55, -0.25, 0.2, 0.62],
+  [-0.5, -0.1, -0.3, 0.58],
+  [0.1, 0.45, -0.45, 0.55],
+  [-0.2, -0.45, 0.5, 0.5],
+];
+const PINE_LAYERS: [number, number][] = [
+  [-0.18, 1.12],
+  [0.22, 0.78],
+];
 const CLICK_TOLERANCE_PX = 5;
 
 /** Jedna klikalna bryła. Zaznaczenie i podświetlenie dotyczą wszystkich brył o tym samym elementKey. */
@@ -59,6 +70,44 @@ export const ElementMesh = memo(function ElementMesh({ el }: { el: BuiltElement 
       userData={{ elementKey: key }}
       {...handlers}
     >
+      {styleId === 'realizm' &&
+        el.primitive.kind === 'sphere' &&
+        el.material === 'korona-brzoza' &&
+        BIRCH_BLOBS.map(([x, y, z, k], i) => (
+          <mesh
+            key={i}
+            geometry={geometry}
+            material={materialFor(
+              el.material,
+              'normal',
+              variantFor(el.material, key + i) * (0.92 + i * 0.04),
+            )}
+            position={[
+              x * (el.primitive as { radius: number }).radius,
+              y * (el.primitive as { radius: number }).radius,
+              z * (el.primitive as { radius: number }).radius,
+            ]}
+            scale={[k, k, k]}
+            castShadow
+            receiveShadow
+            raycast={noRaycast}
+          />
+        ))}
+      {styleId === 'realizm' &&
+        el.primitive.kind === 'cone' &&
+        el.material === 'korona-sosna' &&
+        PINE_LAYERS.map(([y, k], i) => (
+          <mesh
+            key={i}
+            geometry={geometry}
+            material={materialFor(el.material, 'normal', 0.9 + i * 0.08)}
+            position={[0, y * (el.primitive as { height: number }).height, 0]}
+            scale={[k, k, k]}
+            castShadow
+            receiveShadow
+            raycast={noRaycast}
+          />
+        ))}
       {edgeMode === 'cienkie' && !el.noOutline && !big && (
         <Edges threshold={25} color={selected ? '#7c2d12' : outline} />
       )}

@@ -57,6 +57,15 @@ const look = {
     sunI: 2.4,
     sunPos: [-40, 42, -6],
   },
+  realizm: {
+    bg: '#b9d6ec',
+    sky: '#d6e6ff',
+    ground: '#6d7a3a',
+    hemi: 1.0,
+    sun: '#ffe6bd',
+    sunI: 3.6,
+    sunPos: [-38, 30, -18],
+  },
   makieta: {
     bg: '#f1ede6',
     sky: '#ffffff',
@@ -97,7 +106,7 @@ export default function Scene({ spec }: { spec: HouseSpec }) {
         color={look.sun}
         intensity={look.sunI}
         castShadow
-        shadow-mapSize={[2048, 2048]}
+        shadow-mapSize={styleId === 'realizm' ? [4096, 4096] : [2048, 2048]}
         shadow-camera-left={-35}
         shadow-camera-right={35}
         shadow-camera-top={35}
@@ -116,7 +125,7 @@ export default function Scene({ spec }: { spec: HouseSpec }) {
       />
       <CameraRig spec={spec} />
       <TestHooks />
-      {styleId === 'strategia' && (
+      {(styleId === 'strategia' || styleId === 'realizm') && (
         <EffectComposer multisampling={4}>
           <N8AO aoRadius={2.5} intensity={2.2} distanceFalloff={1} color="#2b3a55" />
           <HueSaturation saturation={0.04} />

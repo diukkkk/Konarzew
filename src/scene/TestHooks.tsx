@@ -14,6 +14,11 @@ export function TestHooks() {
       });
       return found;
     };
+    (window as unknown as { __info: () => unknown }).__info = () => ({
+      ...gl.info.render,
+      geometries: gl.info.memory.geometries,
+      textures: gl.info.memory.textures,
+    });
     window.__konarzew = {
       screenPositionOf: (key) => {
         const objs = find(key);

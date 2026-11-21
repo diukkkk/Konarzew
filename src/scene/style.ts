@@ -12,13 +12,14 @@ import {
 } from 'three';
 import type { MaterialId, Primitive } from '../model3d/types';
 import { accent, palette } from './palette';
+import { realMaterial } from './realizm';
 
 /**
  * PROTOTYP (gałąź do wyboru stylu): kilka wariantów wyglądu tej samej sceny.
  * Wybór przez adres: ?styl=obecny | strategia | lowpoly | komiks | makieta
  */
-export type StyleId = 'obecny' | 'strategia' | 'lowpoly' | 'komiks' | 'makieta';
-const ids: StyleId[] = ['obecny', 'strategia', 'lowpoly', 'komiks', 'makieta'];
+export type StyleId = 'obecny' | 'strategia' | 'lowpoly' | 'komiks' | 'makieta' | 'realizm';
+const ids: StyleId[] = ['obecny', 'strategia', 'lowpoly', 'komiks', 'makieta', 'realizm'];
 
 function readStyle(): StyleId {
   if (typeof window === 'undefined') return 'obecny';
@@ -110,7 +111,15 @@ const makieta: Pal = {
   'korona-sosna': '#94a88a',
 };
 
-const palettes: Record<StyleId, Pal> = { obecny: {}, strategia, lowpoly, komiks, makieta };
+const realizm: Pal = {
+  ...strategia,
+  sciana: '#f1efe9',
+  'sciana-garaz': '#ece9e2',
+  drzwi: '#2a2d31',
+  brama: '#2f3237',
+  szklo: '#5e8aa8',
+};
+const palettes: Record<StyleId, Pal> = { obecny: {}, strategia, lowpoly, komiks, makieta, realizm };
 
 export function colorFor(id: MaterialId): string {
   return palettes[styleId][id] ?? palette[id];
@@ -181,6 +190,15 @@ export function materialFor(id: MaterialId, state: MaterialState, shade = 1): Ma
   if (m) return m;
   const color = state === 'selected' ? accent : colorFor(id);
   switch (styleId) {
+    case 'realizm': {
+      const r = realMaterial(id, color, state);
+      if (r) {
+        cache.set(k, r);
+        return r;
+      }
+      m = new MeshStandardMaterial({ color, roughness: 0.85, metalness: 0 });
+      break;
+    }
     case 'strategia': {
       const mm = new MeshStandardMaterial({ color, roughness: 0.92, metalness: 0 });
       if (id === 'okolica') mm.map = paintedTexture(45);
@@ -213,7 +231,7 @@ export function materialFor(id: MaterialId, state: MaterialState, shade = 1): Ma
 
 /** Drzewa w niektórych stylach mają gładsze, bardziej „bajkowe” korony. */
 export function primitiveFor(p: Primitive, id: MaterialId): Primitive {
-  if (styleId === 'strategia' || styleId === 'komiks' || styleId === 'makieta') {
+  if (styleId === 'strategia' || styleId === 'komiks' || styleId === 'makieta' || styleId === 'realizm') {
     if (p.kind === 'sphere' && id === 'korona-brzoza') return { ...p, detail: 2 };
     if (p.kind === 'cone' && id === 'korona-sosna') return { ...p, segments: 12 };
     if (p.kind === 'cylinder' && id.startsWith('pien')) return { ...p, segments: 8 };
