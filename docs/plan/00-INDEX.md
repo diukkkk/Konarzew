@@ -20,6 +20,7 @@ Centrum aplikacji to prosty, rysunkowy model 3D domu na działce. Kliknięcie el
 | `03-model-danych.md` | Typy danych (kanoniczne), klucze elementów 3D, wersjonowanie, gotowość pod chmurę | Agenci dotykający danych |
 | `04-moduly-i-zaleznosci.md` | Lista modułów, graf zależności, „co się psuje, gdy zmienisz X” | Każdy przed zmianą kontraktu |
 | `05-roadmapa.md` | Fazy (MVP → działka/wnętrze → instalacje → chmura), kolejność zadań | Koordynator, Damian |
+| `07-wytyczne-modelu-i-renderu.md` | Jak dom wygląda naprawdę (fakty ze zdjęć), które zdjęcie do którego elementu, wytyczne do renderów AI | **Każdy, kto zmienia model 3D lub przygotowuje render** |
 | `06-zasady-dla-agentow.md` | Zasady pracy, definicja „zrobione”, szablon raportu | Każdy agent (krótki) |
 | `STATUS.md` | Tabela zadań i ich stan | Każdy agent (start i koniec) |
 | `DECYZJE.md` | Dziennik decyzji, założenia (Z-), otwarte pytania (P-) | Przy zmianie kontraktu lub wątpliwości |

@@ -17,6 +17,7 @@ describe('elementKeys', () => {
   });
   it('etykiety okien i drzew', () => {
     expect(labelFor('dom.okno.o-salon-1')).toBe('Okno salon 1');
-    expect(labelFor('dzialka.drzewo.d4')).toBe('Drzewo d4');
+    expect(labelFor('dzialka.drzewo.s4')).toBe('Sosna 4');
+    expect(labelFor('dzialka.drzewo.b2')).toBe('Brzoza 2');
   });
 });

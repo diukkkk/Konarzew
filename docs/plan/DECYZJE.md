@@ -65,3 +65,8 @@ Wpływ: T02 nie zmienia `HouseSpec`; `src/core/elementKeys.ts` już istnieje (T0
 
 ### D-011 (2026-11-21, T03, moduły: M4)
 Decyzja: Kamera perspektywiczna fov 30° (efekt quasi-izometryczny), OrbitControls, styl MeshToonMaterial (4 stopnie) + obrys `Edges`. Scena ładowana leniwie (osobny plik ~260 kB gzip). Testy e2e klikają elementy przez `window.__konarzew.screenPositionOf(key)`; WebGL w CI przez SwiftShader.
+
+### D-012 (2026-11-21, poprawki po uwagach Damiana, moduły: M3, M4)
+Decyzja: Model poprawiony wg uwag Damiana i przeglądu 30 zdjęć: dach płaski tylko nad garażem (usunięte zadaszenie wejścia — ZASTĘPUJE część D-009 o `flatParts` „zadaszenie”), przeszklenie szczytu salonu = trójkąt prostokątny na połowie od ogrodu, ściany 3,55 m + kąt 32°, okap 0,7 m z krokwiami, wieniec, 4 wąskie okna 0,85 m od ogrodu, dach garażu z papy, tarasy przeniesione do wizji (`extras.visionOnly`). Nowy plik `07-wytyczne-modelu-i-renderu.md` obowiązuje przy każdej zmianie modelu i renderach. Hierarchia źródeł: uwagi Damiana > zdjęcia > rzut > elewacje > mapa.
+Dlaczego: pierwsza wersja zgadywała tam, gdzie zdjęcia dawały odpowiedź.
+Wpływ: T11–T15 czytają 07; T13 dodaje wariant „wizja” (tarasy, cegła, palona deska).

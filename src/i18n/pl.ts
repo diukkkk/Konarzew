@@ -18,6 +18,7 @@ export const pl = {
       loading: 'Wczytywanie modelu 3D…',
       hint: 'Przeciągnij, aby obrócić. Kliknij element, aby go wybrać.',
       viewHouse: 'Dom',
+      viewGarden: 'Od ogrodu',
       viewTop: 'Z góry',
       viewPlot: 'Cała działka',
       hideRoof: 'Ukryj dach',

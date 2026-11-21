@@ -8,7 +8,7 @@ Aplikacja webowa (PL) do budowy domu z rysunkowym modelem 3D; dom ma stać na dz
 Podłoże z mapką/satelitą w skali, obrys działki, ustawienie i obrót domu, drzewa i strefy jako klikalne elementy `dzialka.*`.
 
 ## Przeczytaj
-`03` sekcja `PlotSpec`, „Klucze elementów” (`dzialka.*`). Raporty T04 (`BuiltElement`), T07 (`saveMedia`).
+**`07-wytyczne-modelu-i-renderu.md` (obowiązkowo — fakty ze zdjęć i lista zdjęć do Twoich elementów).** `03` sekcja `PlotSpec`, „Klucze elementów” (`dzialka.*`). Raporty T04 (`BuiltElement`), T07 (`saveMedia`).
 
 ## Wejścia
 `/mnt/project-files/materialy/dzialka/` (mapka z wrysowanym domem) i `materialy/WYMIARY.md` (działka ok. 4800 m²).

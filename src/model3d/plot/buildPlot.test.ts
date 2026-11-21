@@ -34,9 +34,9 @@ describe('buildPlot', () => {
     for (const t of a) expect(pointInPolygon([t.x, t.z], plot.boundary)).toBe(false);
   });
 
-  it('drzewa z mapy i strefy są klikalne, las nie', () => {
+  it('drzewa z ortofotomapy i strefy są klikalne, las nie', () => {
     const els = buildPlot(plot, -0.3);
-    expect(els.some((e) => e.elementKey === 'dzialka.drzewo.d1' && e.clickable !== false)).toBe(true);
+    expect(els.some((e) => e.elementKey === 'dzialka.drzewo.s1' && e.clickable !== false)).toBe(true);
     expect(els.some((e) => e.elementKey === 'dzialka.strefa.podjazd')).toBe(true);
     expect(els.filter((e) => e.elementKey === 'dzialka.las').every((e) => e.clickable === false)).toBe(true);
   });

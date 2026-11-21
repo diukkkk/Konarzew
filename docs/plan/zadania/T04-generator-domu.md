@@ -8,7 +8,7 @@ Aplikacja webowa (PL) do budowy domu typu „stodoła” (projekt „Stodoła S+
 Czyste funkcje `buildHouse(spec) → BuiltElement[]` tworzące bryłę stodoły (ściany, szczyty, połacie dachu, kalenica, okapy, skrzynie okapowe, murłata, obróbki, okna/drzwi, taras, komin, fundament) + plik spec z wartościami tymczasowymi.
 
 ## Przeczytaj
-`03-model-danych.md` sekcje `HouseSpec`, „Klucze elementów”. `02` sekcja „Publiczne API” (`src/model3d`). Raport T03 („Dla następnych”: API `ElementMesh`).
+**`07-wytyczne-modelu-i-renderu.md` (obowiązkowo — fakty ze zdjęć i lista zdjęć do Twoich elementów).** `03-model-danych.md` sekcje `HouseSpec`, „Klucze elementów”. `02` sekcja „Publiczne API” (`src/model3d`). Raport T03 („Dla następnych”: API `ElementMesh`).
 
 ## Pliki (wolno)
 `src/model3d/house/*` (oprócz `interior.ts`), `src/model3d/types.ts` (`BuiltElement`), `src/model3d/specs/house.default.json`, `src/scene/HouseView.tsx`, `src/core/elementKeys.ts` (tylko dopisanie etykiet).

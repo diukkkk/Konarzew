@@ -8,7 +8,7 @@ Aplikacja do budowy domu „Stodoła S+ Exclusive” generuje model 3D z pliku l
 Prawdziwe wymiary domu w `house.default.json` (obrys, grubość ścian, wysokości, dach, okna/drzwi, taras, komin; pokoje jeśli łatwo odczytać — dla T12).
 
 ## Przeczytaj
-`03` sekcja `HouseSpec` (układ współrzędnych!). Raport T04 (lista kluczy).
+**`07-wytyczne-modelu-i-renderu.md` (obowiązkowo — fakty ze zdjęć i lista zdjęć do Twoich elementów).** `03` sekcja `HouseSpec` (układ współrzędnych!). Raport T04 (lista kluczy).
 
 ## Wejścia
 `/mnt/project-files/materialy/WYMIARY.md` (zacznij od niego — podsumowanie wymiarów) oraz `materialy/rzuty/`, `materialy/zdjecia/`; lista zmian od Damiana (P-3). Kierunek wizji (cegła + deska opalana): `materialy/wizja/`.

@@ -21,7 +21,7 @@ test('scena pokazuje dom i działkę z klikalnymi elementami', async ({ page }) 
     'dom.dach.polac-pd',
     'dom.dach.polac-pn',
     'dom.brama.garaz',
-    'dom.taras.t1',
+    'dom.pergola.salon',
     'dzialka.teren',
     'dzialka.granica',
   ]) {

@@ -28,10 +28,10 @@ export default function Scene({ spec }: { spec: HouseSpec }) {
     >
       <color attach="background" args={['#cfe6f3']} />
       <fog attach="fog" args={['#cfe6f3', 180, 520]} />
-      <hemisphereLight args={['#ffffff', '#7d8b5a', 1.1]} />
+      <hemisphereLight args={['#ffffff', '#9aa77a', 1.4]} />
       <primitive object={sunTarget} />
       <directionalLight
-        position={[center[0] - 25, 45, center[2] + 30]}
+        position={[center[0] - 40, 42, center[2] - 6]}
         target={sunTarget}
         intensity={2.2}
         castShadow

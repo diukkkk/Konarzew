@@ -3,13 +3,17 @@ import { useEffect } from 'react';
 import type { OrbitControls as OrbitControlsImpl } from 'three-stdlib';
 import type { HouseSpec } from '../core/types';
 import { useViewStore, type CameraPreset } from '../state/viewStore';
-import { houseCenterWorld, plotCenterWorld } from './worldMath';
+import { houseCenterWorld, houseToWorld, plotCenterWorld } from './worldMath';
 
 type V3 = [number, number, number];
 
 function presetPose(spec: HouseSpec, preset: CameraPreset): { target: V3; position: V3 } {
   const h = houseCenterWorld(spec);
   if (preset === 'gora') return { target: [h[0], 0, h[2]], position: [h[0], 70, h[2] + 0.01] };
+  if (preset === 'ogrod') {
+    // jak zdjęcie 21: z ogrodu, od narożnika salonu — strona ogrodowa i szczyt z pergolą
+    return { target: [h[0], 2.5, h[2]], position: houseToWorld(spec, [-17, 4, -19]) };
+  }
   if (preset === 'dzialka') {
     const p = plotCenterWorld(spec);
     return { target: p, position: [p[0] - 30, 115, p[2] + 115] };

@@ -30,7 +30,6 @@ export function buildHouse(spec: HouseSpec): BuiltElement[] {
   const p = spec.roof.pitchDeg * DEG;
   const tanP = Math.tan(p);
   const ridgeY = H + (D / 2) * tanP;
-  const hasFrontFlat = spec.flatParts.some((f) => Math.abs(f.z - D) < 0.01);
 
   const out: BuiltElement[] = [];
   const openingsOn = (wall: WallId): Opening[] => spec.openings.filter((o) => o.wall === wall);
@@ -104,6 +103,25 @@ export function buildHouse(spec: HouseSpec): BuiltElement[] {
   };
   for (const w of mainWalls) out.push(...buildWall(w, openingsOn(wallIdOf[w.key]!)));
 
+  // ---------- Wieniec: ciemny pas betonu nad oknami (zdjęcia 13, 14, 21) ----------
+  const band = { y0: 2.55, h: 0.3, d: 0.02 };
+  for (const [w, dpt, x, z] of [
+    [L, band.d, L / 2, -band.d / 2],
+    [L, band.d, L / 2, D + band.d / 2],
+    [band.d, D, -band.d / 2, D / 2],
+    [band.d, D, L + band.d / 2, D / 2],
+  ] as const) {
+    out.push({
+      elementKey: 'dom.wieniec',
+      category: 'konstrukcja',
+      primitive: { kind: 'box', size: [w, band.h, dpt] },
+      position: [x, band.y0 + band.h / 2, z],
+      rotation: [0, 0, 0],
+      material: 'wieniec',
+      noOutline: true,
+    });
+  }
+
   // ---------- Szczyty (trójkąty nad ścianami szczytowymi) ----------
   const gableOutline: Pt2[] = [
     [0, 0],
@@ -128,12 +146,16 @@ export function buildHouse(spec: HouseSpec): BuiltElement[] {
     const holes: Pt2[][] = [];
     const glassShapes: { key: string; shape: Pt2[] }[] = [];
     for (const gg of glazing) {
-      const half = Math.min(2.6, D / 2 - 0.6);
+      // trójkąt prostokątny na połowie szczytu od strony ogrodu: pionowa krawędź przy kalenicy,
+      // przeciwprostokątna równoległa do połaci (ok. 35 cm pod dachem)
       const base = 0.25;
+      const gap = 0.35;
+      const u1 = D / 2 - 0.45;
+      const u0 = (base + gap) / tanP;
       const shape: Pt2[] = [
-        [D / 2 - half, base],
-        [D / 2 + half, base],
-        [D / 2, base + half * tanP * 0.85],
+        [u0, base],
+        [u1, base],
+        [u1, u1 * tanP - gap],
       ];
       holes.push(shape);
       glassShapes.push({ key: `dom.okno.${gg.key}`, shape });
@@ -161,7 +183,7 @@ export function buildHouse(spec: HouseSpec): BuiltElement[] {
   const roofLen = L + 2 * og;
   const sides = [
     { key: 'pn', o: spec.roof.overhangEaves, sign: -1 },
-    { key: 'pd', o: hasFrontFlat ? 0 : spec.roof.overhangEaves, sign: 1 },
+    { key: 'pd', o: spec.roof.overhangEaves, sign: 1 },
   ] as const;
   for (const s of sides) {
     const S = (D / 2 + s.o) / Math.cos(p);
@@ -201,16 +223,25 @@ export function buildHouse(spec: HouseSpec): BuiltElement[] {
       rotation: [0, 0, 0],
       material: 'obrobka',
     });
-    // skrzynia okapowa (podbitka) — tylko gdy jest wysięg
+    // skrzynia okapowa: odkryte końce krokwi pod wysięgiem okapu (zdjęcia 08, 13, 17)
     if (s.o > 0.05) {
-      out.push({
-        elementKey: `dom.dach.skrzynia-okapowa-${s.key}`,
-        category: 'okap',
-        primitive: { kind: 'box', size: [L, 0.22, s.o] },
-        position: [L / 2, eaveY - 0.11, s.sign * (s.o / 2) + (s.sign === 1 ? D : 0)],
-        rotation: [0, 0, 0],
-        material: 'obrobka',
-      });
+      const inside = 0.3;
+      const len = (s.o + inside) / Math.cos(p);
+      const zLocal = (-s.o + inside) / 2; // środek, licząc od lica ściany na zewnątrz (ujemne = na zewnątrz)
+      const zc2 = s.sign === -1 ? zLocal : D - zLocal;
+      const yc2 = H + zLocal * tanP - 0.09;
+      const count = Math.max(2, Math.round(L / 0.9));
+      for (let i = 0; i <= count; i++) {
+        out.push({
+          elementKey: `dom.dach.skrzynia-okapowa-${s.key}`,
+          category: 'okap',
+          primitive: { kind: 'box', size: [0.08, 0.16, len] },
+          position: [0.2 + ((L - 0.4) * i) / count, yc2, zc2],
+          rotation: [rotX, 0, 0],
+          material: 'krokiew',
+          noOutline: true,
+        });
+      }
     }
   }
   out.push({
@@ -244,7 +275,7 @@ export function buildHouse(spec: HouseSpec): BuiltElement[] {
       primitive: { kind: 'box', size: [f.w, 0.3, f.d] },
       position: [f.x + f.w / 2, f.height - 0.15, f.z + f.d / 2],
       rotation: [0, 0, 0],
-      material: 'obrobka',
+      material: 'papa',
     });
     if (f.enclosed) {
       out.push({

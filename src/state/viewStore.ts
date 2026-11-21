@@ -2,7 +2,7 @@ import { create } from 'zustand';
 
 export type Layer = 'woda' | 'prad' | 'kanalizacja' | 'co' | 'wentylacja' | 'smart' | 'kamery';
 export type InteriorMode = 'zewnatrz' | 'bez-dachu' | 'pietro-0' | 'pietro-1';
-export type CameraPreset = 'dom' | 'gora' | 'dzialka';
+export type CameraPreset = 'dom' | 'ogrod' | 'gora' | 'dzialka';
 
 interface ViewState {
   activeVersionId: string | null;

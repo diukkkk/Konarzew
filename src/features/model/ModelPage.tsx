@@ -27,6 +27,7 @@ function Centered({ children }: { children: ReactNode }) {
 
 const presets: { preset: CameraPreset; label: string }[] = [
   { preset: 'dom', label: pl.pages.model.viewHouse },
+  { preset: 'ogrod', label: pl.pages.model.viewGarden },
   { preset: 'gora', label: pl.pages.model.viewTop },
   { preset: 'dzialka', label: pl.pages.model.viewPlot },
 ];

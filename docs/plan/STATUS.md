@@ -14,7 +14,7 @@ Aktualizacja: 2026-11-21 (model 3D na działce)
 | T08 | Lista zakupów | 1 | T02 | do-zrobienia | |
 | T09 | Widoki zbiorcze: tablica, zadania, filtry | 1 | T06, T07 | do-zrobienia | |
 | T10 | Wydanie MVP | 1 | T05–T09 | do-zrobienia | |
-| T11 | Działka | 2 | T04, T07 | częściowo | Działka, posadowienie, drzewa, podjazd, las gotowe; brak edytora/kalibracji mapki i mapki jako podłoża |
+| T11 | Działka | 2 | T04, T07 | częściowo | Granice i drzewa z ortofotomapy Geoportalu, posadowienie, podjazd, las gotowe; brak edytora/kalibracji mapki i mapki jako podłoża |
 | T12 | Wnętrze | 2 | T04, T05 | do-zrobienia | |
 | T13 | Wersje modelu | 2 | T04, T06 | do-zrobienia | |
 | T14 | Warstwy instalacji: trasy | 3 | T12, T13 | do-zrobienia | |

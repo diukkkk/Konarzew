@@ -7,7 +7,7 @@ let gradient: DataTexture | null = null;
 /** 4-stopniowe cieniowanie „toon” — płaskie plamy światła jak w rysunku. */
 function toonGradient(): DataTexture {
   if (!gradient) {
-    gradient = new DataTexture(new Uint8Array([110, 165, 215, 255]), 4, 1, RedFormat);
+    gradient = new DataTexture(new Uint8Array([150, 190, 228, 255]), 4, 1, RedFormat);
     gradient.minFilter = NearestFilter;
     gradient.magFilter = NearestFilter;
     gradient.generateMipmaps = false;

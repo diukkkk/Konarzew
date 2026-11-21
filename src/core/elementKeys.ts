@@ -25,8 +25,8 @@ const EXACT: Record<string, string> = {
   'dom.dach.kalenica': 'Kalenica',
   'dom.dach.okap-pn': 'Okap i rynna od ogrodu',
   'dom.dach.okap-pd': 'Okap i rynna od frontu',
-  'dom.dach.skrzynia-okapowa-pn': 'Skrzynia okapowa od ogrodu',
-  'dom.dach.skrzynia-okapowa-pd': 'Skrzynia okapowa od frontu',
+  'dom.dach.skrzynia-okapowa-pn': 'Okap od ogrodu (krokwie, podbitka)',
+  'dom.dach.skrzynia-okapowa-pd': 'Okap od frontu (krokwie, podbitka)',
   'dom.dach.murlata': 'Murłata',
   'dom.dach.obrobki': 'Obróbki blacharskie szczytów',
   'dom.sciana': 'Ściany',
@@ -45,6 +45,7 @@ const EXACT: Record<string, string> = {
   'dom.wejscie.dach': 'Zadaszenie wejścia',
   'dom.wejscie.posadzka': 'Posadzka pod zadaszeniem',
   'dom.fundament': 'Fundament i cokół',
+  'dom.wieniec': 'Wieniec',
   'dom.okno': 'Okna',
   'dom.drzwi': 'Drzwi',
   'dom.brama': 'Bramy',
@@ -76,6 +77,7 @@ const OPENING_NAMES: Record<string, string> = {
   'hs-salon': 'tarasowe HS w salonie',
   wejsciowe: 'wejściowe',
   'garaz-techniczne': 'techniczne garażu',
+  'garaz-wejscie': 'z garażu do wejścia',
   garaz: 'garażowa',
   'szczyt-salon': 'przeszklenie w szczycie salonu',
 };
@@ -103,7 +105,11 @@ export function labelFor(key: string): string {
     return tail.startsWith('slup') ? `Słup pergoli ${tail.slice(5)}` : 'Pergola';
   if (zone === 'dom' && group === 'wejscie' && tail.startsWith('slup'))
     return `Słup zadaszenia ${tail.slice(5)}`;
-  if (zone === 'dzialka' && group === 'drzewo') return `Drzewo ${tail}`;
+  if (zone === 'dzialka' && group === 'drzewo') {
+    if (/^s\d+$/.test(tail)) return `Sosna ${tail.slice(1)}`;
+    if (/^b\d+$/.test(tail)) return `Brzoza ${tail.slice(1)}`;
+    return `Drzewo ${tail}`;
+  }
   if (zone === 'dzialka' && group === 'strefa') {
     const names: Record<string, string> = { podjazd: 'Podjazd', oczyszczalnia: 'Oczyszczalnia / drenaż' };
     return names[tail] ?? `Strefa ${tail}`;

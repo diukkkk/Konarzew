@@ -3,7 +3,8 @@ import type { HouseSpec } from '../../core/types';
 import { defaultHouseSpec } from '../index';
 import { buildHouse, houseInfo } from './buildHouse';
 
-const keys = (spec: HouseSpec) => buildHouse(spec).map((e) => e.elementKey);
+// Kontrakt dotyczy zestawu kluczy (liczba brył danego elementu, np. krokwi, może zależeć od wymiarów).
+const keys = (spec: HouseSpec) => [...new Set(buildHouse(spec).map((e) => e.elementKey))];
 const clone = (s: HouseSpec): HouseSpec => structuredClone(s);
 
 describe('buildHouse', () => {
@@ -45,8 +46,6 @@ describe('buildHouse', () => {
       'dom.drzwi.wejsciowe',
       'dom.brama.garaz',
       'dom.garaz.dach',
-      'dom.wejscie.dach',
-      'dom.taras.t1',
       'dom.komin.k1',
       'dom.fundament',
     ]) {

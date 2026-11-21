@@ -8,7 +8,7 @@ Aplikacja webowa (PL) do budowy domu z modelem 3D (z wnętrzem). Damian chce zap
 Warstwy włączane/wyłączane, rysowanie i edycja tras po powierzchniach, punkty (gniazdka, wypusty, zawory, kamery).
 
 ## Przeczytaj
-`03` sekcje `InstallationRoute`, `Layer`. `02` `viewStore.visibleLayers`. Raporty T12, T13.
+**`07-wytyczne-modelu-i-renderu.md` (obowiązkowo — fakty ze zdjęć i lista zdjęć do Twoich elementów).** `03` sekcje `InstallationRoute`, `Layer`. `02` `viewStore.visibleLayers`. Raporty T12, T13.
 
 ## Pliki (wolno)
 `src/model3d/installations/**`, `src/scene/LayerView.tsx`, `src/scene/RouteDrawTool.tsx`, `src/features/installations/**`, `src/data/repos/routes.ts`, `scene/palette.ts` (kolory warstw).

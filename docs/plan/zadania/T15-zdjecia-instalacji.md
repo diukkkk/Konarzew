@@ -8,7 +8,7 @@ Aplikacja webowa (PL) do budowy domu; instalacje w ścianach mają warstwy i tra
 Tryb „Dokumentuj ścianę”: zdjęcie przypięte w punkcie ściany + wymiary + adnotacje na zdjęciu.
 
 ## Przeczytaj
-`03` wpis `zdjecie` (`measurements`), `Pin.layer`. Raporty T07 (PhotoEditor), T14.
+**`07-wytyczne-modelu-i-renderu.md` (obowiązkowo — fakty ze zdjęć i lista zdjęć do Twoich elementów).** `03` wpis `zdjecie` (`measurements`), `Pin.layer`. Raporty T07 (PhotoEditor), T14.
 
 ## Pliki (wolno)
 `src/features/installations/WallDocumentation.tsx`, `src/ui/PhotoAnnotator.tsx`, `src/features/pins/editors/PhotoEditor.tsx` (rozbudowa wymiarów).

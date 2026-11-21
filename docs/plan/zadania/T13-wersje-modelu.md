@@ -8,7 +8,7 @@ Aplikacja webowa (PL) do budowy domu; model 3D powstaje z `HouseSpec` zapisanego
 Tworzenie, przełączanie, porównywanie wersji; prosty edytor parametrów; obsługa pinezek osieroconych.
 
 ## Przeczytaj
-`03` sekcje `ModelVersion`, „Wersjonowanie modelu”. `04` wiersze o `elementKey` i `HouseSpec`. Raport T06.
+**`07-wytyczne-modelu-i-renderu.md` (obowiązkowo — fakty ze zdjęć i lista zdjęć do Twoich elementów).** `03` sekcje `ModelVersion`, „Wersjonowanie modelu”. `04` wiersze o `elementKey` i `HouseSpec`. Raport T06.
 
 ## Pliki (wolno)
 `src/features/settings/versions/**`, `src/data/repos/versions.ts` (rozbudowa), `src/state/viewStore.ts` (`activeVersionId` — już jest), `src/features/pins/*` (tylko oznaczenie osieroconych i `versionScope`).
